@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Noor Closet – Women’s Fashion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f9fafb;
+      color: #111827;
+    }
+    header {
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .logo span {
+      color: #ec4899;
+    }
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    nav a:hover {
+      color: #111827;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      padding: 40px 24px;
+      max-width: 1040px;
+      margin: 0 auto;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero-text p {
+      font-size: 15px;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary,
+    .btn-outline {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #ec4899, #f97316);
+      color: #ffffff;
+      border-color: #ec4899;
+    }
+    .btn-outline {
+      background: #ffffff;
+      color: #111827;
+      border-color: #d1d5db;
+    }
+    .hero-badge {
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fee2e2;
+      color: #b91c1c;
+      margin-bottom: 10px;
+    }
+    .hero-image {
+      background: linear-gradient(135deg, #fdf2f8, #fee2e2);
+      border-radius: 24px;
+      padding: 16px;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 16px 14px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+      max-width: 260px;
+      text-align: center;
+    }
+    .hero-image-card h2 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    .hero-image-card p {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+    .pill {
+      display: inline-block;
+      font-size: 11px;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin: 2px;
+    }
+    .section {
+      max-width: 1040px;
+      margin: 0 auto 40px;
+      padding: 0 24px;
+    }
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .section p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+    }
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+    .newsletter {
+      background: #111827;
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 18px 18px 20px;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+    }
+    .newsletter p {
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+    .newsletter input {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: none;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .newsletter button {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: none;
+      font-size: 13px;
+      cursor: pointer;
+      background: #f97316;
+      color: #ffffff;
+    }
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 24px;
+      }
+      .hero-image {
+        order: -1;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      nav {
+        font-size: 13px;
+      }
+      .newsletter {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Noor<span>Closet</span></div>
+    <nav>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">New · Summer ’25 Edit</div>
+        <h1>Effortless styles for every mood.</h1>
+        <p>
+          Discover kurtis, co-ords and western fits designed for 
+          everyday comfort and weekend glam – all in one online wardrobe.
+        </p>
+        <div class="btn-row">
+          <a href="#collections" class="btn-primary">Shop Collections</a>
+          <a href="#contact" class="btn-outline">WhatsApp for Orders</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-card">
+          <h2>Signature Edit</h2>
+          <p>Handpicked looks for office, brunch & festive nights.</p>
+          <div>
+            <span class="pill">Kurtis</span>
+            <span class="pill">Co-ord Sets</span>
+            <span class="pill">Dresses</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <h2>Our Collections</h2>
+      <p>Start with our three best-selling categories for women.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Everyday Kurtis</h3>
+          <p>Soft cotton & rayon styles made for daily comfort and easy styling.</p>
+          <div style="margin-top: 8px;">
+            <span class="tag">Office Ready</span>
+            <span class="tag">Wash & Wear</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Co-ord Sets</h3>
+          <p>Match-top & bottom sets that look premium with zero effort.</p>
+          <div style="margin-top: 8px;">
+            <span class="tag">Brunch</span>
+            <span class="tag">Airport Look</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Western Fits</h3>
+          <p>Dresses, tops & bottom-wear to keep your feed and wardrobe on trend.</p>
+          <div style="margin-top: 8px;">
+            <span class="tag">Casual</span>
+            <span class="tag">Party</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About NoorCloset</h2>
+      <p>
+        NoorCloset is an online-only women’s clothing label focused on 
+        flattering fits, breathable fabrics and versatile styles. 
+        We curate small, thoughtful drops instead of fast fashion chaos.
+      </p>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="newsletter">
+        <div>
+          <h2>Stay in the loop</h2>
+          <p>Get first access to new collections, restocks and special offers.</p>
+        </div>
+        <div>
+          <input type="email" placeholder="Enter your email" />
+          <button type="button">Notify Me</button>
+          <p style="margin-top: 4px; font-size: 11px;">
+            Or DM us on Instagram: <strong>@noorcloset</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> NoorCloset · Online Women’s Wear
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
